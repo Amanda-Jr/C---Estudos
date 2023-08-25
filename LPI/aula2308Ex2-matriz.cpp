@@ -6,11 +6,10 @@ using namespace std;
 Faça um programa que leia um valor referente á ordem de uma matriz quadrada e gere a matriz identidade dessa ordem.
 */
 
-//corrigit erro: Falta de segmentação (núcleo despejado)
 
 void matriz_identidade(int mat[max][max], int ord){
     for(int i=0; i<ord; i++){
-        for(int j=0; i<ord; j++){
+        for(int j=0; j<ord; j++){
             if(i==j){
                 mat[i][j] = 1;
             } else {
