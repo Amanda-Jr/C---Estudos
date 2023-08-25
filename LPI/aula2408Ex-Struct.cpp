@@ -47,7 +47,7 @@ int classificado(Candidato vet[],int tam){
 
 
 int main(){
-    const int tam = 5;
+    const int tam = 10;
     Candidato vet_cadidatos[tam];
 
     candidatosConcurso(vet_cadidatos, tam);
