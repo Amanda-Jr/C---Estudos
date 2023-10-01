@@ -6,7 +6,7 @@ using namespace std;
 void ler_vetor(char vet[], char l){
     cout << "Escreva uma palavra de 5 letras."<<endl;
     int i = 0;
-    while((l = getchar())!='\n'){  
+    while((l = getchar())!='\n' and i<=4){  
         vet[i] = l;
         i++;
     }
