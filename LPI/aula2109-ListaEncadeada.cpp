@@ -1,9 +1,11 @@
 #include <iostream>
 using namespace std;
 
-//append
-//print
-//len
+/*
+append
+print
+len
+*/
 
 struct nolista{
     string dado;
