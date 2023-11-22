@@ -36,28 +36,28 @@ void enfileirar(fila *F, bool p, string n){
     if(F->ini == NULL){
         F->ini = novo;
         F->fim = novo;
+    } else if((!novo->priori)|| F->fim->priori){
+        novo->ant = F->fim;
+        F->fim->prox = novo;
+        F->fim = novo;
+    } else if(!F->ini->priori){
+        novo->prox = F->ini;
+        F->ini->ant = novo;
+        F->ini = novo;
     } else{
-        if(novo->priori == false){
-            novo->ant = F->fim;
-            F->fim->prox = novo;
+        nofila *p  = F->ini;
+        while((p->prox!=NULL)&&(p->priori || p->prox->priori)){ // enquanto o próximo for diferente de null e os dois próximos forem prioritário
+            p = p->prox;
+        }
+        if(p->prox == NULL){
+            p->prox = novo;
+            novo->ant = p;
             F->fim = novo;
-
         } else{
-            if(F->ini == F->fim && F->ini->priori == false){
-                novo->prox = F->ini;
-                F->ini->ant = novo;
-                F->ini = novo;
-            } else{
-                nofila *p = F->ini;
-                while(p->prox->priori == true){
-                    p = p->prox;
-                }
-                novo->ant = p;
-                novo->prox = p->prox;
-                p->prox->ant = novo;
-                p->prox = novo;
-            }
-            
+            novo->ant = p;
+            novo->prox = p->prox;
+            p->prox = novo;
+            novo->prox->ant = novo;
         }
     }
 }
